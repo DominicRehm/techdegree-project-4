@@ -1,0 +1,31 @@
+// Centering Mixin
+
+@mixin align-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// Media Query Mixin
+
+@mixin medium-br {
+    @media ($brk-m) {
+        @content;
+    }
+}
+
+// Flexbox Mixin
+
+@mixin flexy(
+    $disp: null,
+    $dir: null,
+    $justy: null,
+    $align: null,
+    $basis: null,
+) {
+    display: $disp;
+    flex-direction: $dir;
+    justify-content: $justy;
+    align-items: $align;
+    flex-basis: $basis;
+}

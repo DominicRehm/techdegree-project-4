@@ -1,0 +1,32 @@
+.btn {
+    margin-top: 15px;
+    width: 100%;
+    color: $white;
+    border: none;
+    padding: 10px 0;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: background-color .4s ease-in;
+
+    @include medium-br {
+      padding: 10px 30px;
+
+      & + .btn {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  
+  @each $hvr-clr, $color in $hover-btn {
+    #{$hvr-clr} {
+      background-color: $color;
+    }
+  }
+  
+  @each $btn, $color in $btn-colors {
+    #{$btn} {
+      background-color: $color;
+    }
+  }
+

@@ -1,0 +1,58 @@
+.container {
+    padding: 0 10px;
+
+    @include medium-br {
+      max-width: $m-width;
+      @include align-center;
+    }
+}
+
+.row {
+    @include flexy($disp: flex, $dir: column);
+    padding: 1em 10px;
+
+    @include medium-br {
+      @include flexy($dir: row);
+    }
+}
+
+.card {
+  @include flexy($basis: 100%);
+}
+
+[class^=col] {
+    margin-top: 10px;
+    @include flexy($basis: 100%);
+    min-height: 25px;
+    padding: 10px;
+    border-radius: 5px;
+
+    @include medium-br {
+      @include flexy($disp: flex, $justy: center, $align: center);
+      margin-top: 0;
+
+      & + [class^=col] {
+        margin-left: 10px;
+      }
+    }
+}
+
+@each $col, $color in $col-colors {
+  .theme.#{$col} {
+    background-color: $color;
+  }
+}
+
+@include medium-br {
+  @each $col, $size in $m-flex-sizes {
+    #{$col} {
+      flex-basis: $size;
+    }
+  }
+
+  .centered {
+    @include align-center;
+    text-align: center;
+  }
+
+}

@@ -1,0 +1,23 @@
+.img-avatar {
+    @include align-center;
+    margin-top: 10px;
+    max-width: 100%; 
+    max-height: 100%;
+  }
+  
+  .img-frame {
+    @include align-center;
+    margin-top: 10px;
+    max-width: 100%;
+    padding: 13px;
+    border: 1px solid #ccc;
+  }
+  
+  .img-logo {
+    @include align-center;
+
+    @include medium-br {
+      margin-left: initial;
+      margin-right: initial;
+    }
+  }
